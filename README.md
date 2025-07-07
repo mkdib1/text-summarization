@@ -1,3 +1,4 @@
+```
 # AIMS
 This project aims to perform text summarization using an extractive approach. The objective is to generate summaries by selecting key sentences from the original texts, and to evaluate them using both unsupervised and supervised metrics.  
 Additionally, a classification task is performed to assess whether using summaries instead of full texts maintains classification performance across the reference categories.
@@ -31,3 +32,4 @@ To address this limitation, the following steps were carried out:
 |  |- .env 						# environment variables setting
 |  |- requirements.txt 			# libraries and packages installation guidelines
 |  |- README.md 				# this file
+```

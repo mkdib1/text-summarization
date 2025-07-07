@@ -21,7 +21,7 @@ To address this limitation, the following steps were carried out:
 |- text_summarization 
 |  |- Data/ 					
 |     |- bbc-news-data.csv      				# main dataset 
-|	  |- cnn_dailymail.csv 						# side dataset to tune models using ROUGE scoring
+|	  |- cnn_dailymail.csv 			# side dataset to tune models using ROUGE scoring
 |        |- output              	# subfolder containing the original bbc-news-data with added summary columns 
 |           |- bbc-news-data-summaries.csv  
 |        |- results                 # subfolder containing .csv file which report tuning results

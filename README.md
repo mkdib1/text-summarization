@@ -41,8 +41,13 @@ After cloning the repository from the command line:
 git clone https://github.com/mkdib1/text-summarization.git
 cd text-summarization
 ```
-please install your python virtual environment. Then install the requirements:
+please install your python virtual environment. Then install the required dependencies:
 ```
 pip -r requirements.txt
 ```
-
+Finally, set the environmental variable `BASE_DIR` with the full local path pointing to the 'text-summarization/Data' directory.<br>
+If you are interested in running the unsupervised tuning procedure, execute:
+```
+python model_blanc_tun.py
+```
+If you want to try the supervised tuning procedure, please open `cnn_rouge_tun.ipynb` and runall command

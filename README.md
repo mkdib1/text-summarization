@@ -34,3 +34,15 @@ The following steps were carried out:
 |  |- requirements.txt 			# libraries and packages installation guidelines
 |  |- README.md 				# this file
 ```
+
+# USAGE
+After cloning the repository from the command line:
+```
+git clone https://github.com/mkdib1/text-summarization.git
+cd text-summarization
+```
+please install your python virtual environment. Then install the requirements:
+```
+pip -r requirements.txt
+```
+

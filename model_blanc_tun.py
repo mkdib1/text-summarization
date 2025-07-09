@@ -37,7 +37,7 @@ if __name__ == "__main__":
     df_bbc =  pd.read_csv(bbc_path, sep='\t')
     
     print("--- DF RANDOM SAMPLING ---")
-    df_sample = df_bbc.sample(frac=0.0025, random_state=125) # extract randomly 1% of rows, in order to make further tuning in reasonable time
+    df_sample = df_bbc.sample(frac=0.05, random_state=125) # extract randomly 1% of rows, in order to make further tuning in reasonable time
     print(f"--- extracted {len(df_sample)} out of {len(df_bbc)} rows ---")
 
     # lists init. to save results
@@ -146,7 +146,7 @@ if __name__ == "__main__":
                     })
 
     print(blanc_score_df)
-    blanc_score_df.to_csv('avg_blanc_scores_tun.csv', sep=";", index=False)
+    blanc_score_df.to_csv('/Data/results/blanc_scores.csv', sep=";", index=False)
     
 
 

@@ -8,7 +8,6 @@ from blanc import BlancHelp
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import normalize
 
 import numpy as np
@@ -231,8 +230,7 @@ def pager_summarizer(nlp: Language = None, text: str = None, num_sentences: int 
         sub_embeddings = doc_embeddings[top_k_indices]
 
     query = np.mean(sub_embeddings, axis=0) # query as the average of the sentence embeddings
-    scaler = MinMaxScaler() 
-    query = scaler.fit_transform(query.reshape(-1, 1)).flatten() # scaled and flatten
+    query = query / np.linalg.norm(query)  # normalizing query with L2 to accomplish with tfidf vectors
 
     selected_local = mmr(
         sub_embeddings,
@@ -278,7 +276,7 @@ def lda_summarizer(nlp, text, num_sentences=None, num_topics=3, remove_stopwords
                                                   remove_stopwords=remove_stopwords,
                                                   stop_words=stop_words)
 
-    num_sentences = max(1, min(num_sentences, int(len(original_sentences) * 0.6))) # max number of sentences set
+    num_sentences = max(1, min(num_sentences, len(original_sentences))) # max number of sentences set
     has_propn_subj, starts_with_adv = extract_pos_features(doc, stop_words) # POS tag
     tokenized_sentences = [sentence.split() for sentence in processed_sentences] # BoW tokenization
 

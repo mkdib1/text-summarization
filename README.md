@@ -21,15 +21,16 @@ The following steps were carried out:
 ```
 |- text_summarization 
 |  |- Data/ 					
-|     |- bbc-news-data.csv      				# main dataset 
-|	  |- cnn_dailymail.csv 			# side dataset to tune models using ROUGE scoring
-|        |- output              	# subfolder containing the original bbc-news-data with added summary columns 
-|           |- bbc-news-data-summaries.csv  
+|     |- bbc-news-data.csv      	# main dataset 
+|	  |- cnn_dailymail.csv 			# side dataset
+|        |- output              	 
+|           |- bbc-news-data-summaries.csv  # main ds with added summary cols
 |        |- results                 # subfolder containing .csv file which report tuning results
-|           |- ...
-|  |- mod_blanc_tun.py              # .py script to run models whose performance are evaluated using BLANC scoring
+|           |- blanc_scores.csv     # BLANC scrs results
+|           |- rouge_scores.csv     # ROUGE scrs results
+|  |- mod_blanc_tun.py              # .py to run models on the main ds and BLANC scoring eval
 |  |- util.py 			# .py script collecting preprocessing and model building functions
-|  |- cnn_rouge_tun.ipynb 	# notebook to test models performance among cnn_dailymail ds for supervised evaluation
+|  |- cnn_rouge_tun.ipynb 	# notebook to run models on the side ds and ROUGE scoring eval
 |  |- .env 						# environment variables setting
 |  |- requirements.txt 			# libraries and packages installation guidelines
 |  |- README.md 				# this file
